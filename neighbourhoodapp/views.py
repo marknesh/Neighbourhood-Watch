@@ -78,7 +78,7 @@ def updatemyprofile(request):
                 myprofile.bio = form.cleaned_data['bio']
                 myprofile.username = form.cleaned_data['username']
                 myprofile.save_profile()
-                return redirect( myprofile )
+                return redirect("/profile/")
         else:
             form = ProfileUpdateForm()
     except:
