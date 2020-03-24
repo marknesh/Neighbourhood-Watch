@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    
     {% block content %}
     {{block.super}}
-    <h1> Neighbourhood Watch</h1>
+    <div class="main">
+       <h1> Neighbourhood Watch</h1>
+   </div>
     {% endblock %}
+    
 </body>
 </html>
