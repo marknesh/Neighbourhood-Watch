@@ -1,0 +1,43 @@
+
+
+{% block content %}
+
+{% load bootstrap4 %}
+{% load static %}
+
+
+
+{% block styles %}
+{% bootstrap_css %}
+
+{% endblock %}
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+
+            {% if profile %}
+
+                {% load cloudinary %}{% cloudinary profile.profile_photo.public_id className="my-class"  %}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding:10px;">
+                <h5 style="font-size:35px;">{{profile.username}}</h5>
+
+
+                             <p>{{profile.bio}}</p>
+
+            {% endif %}
+                {% if profile.user == current_user%}
+                <a href="{% url 'update_profile'%}"><button class="btn btn-primary">Edit Profile</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                    <span class="glyphicon glyphicon-plus-sign" style="font-size:35px;"></span>
+                </a>
+                {% else %} <h3>Profile has not been created yet</h3>
+                <a href="{% url 'update_profile'%}"><button class="btn btn-primary">Create Profile</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {% endif %}
+    </div>
+</div>
+
+</body>
+{% endblock %}

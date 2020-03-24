@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 from decouple import config
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,6 +34,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
+    'tinymce',
     'bootstrap4',
     'six',
     'neighbourhoodapp',
@@ -94,6 +97,13 @@ DATABASES = {
 
     }
 }
+
+cloudinary.config(
+    cloud_name = 'dfjpf16e3',
+    api_key = '616741327242619',
+    api_secret = 'CbIbI3yhTv9fDWsNflPcV-Re4tk'
+)
+
 
 
 # Email configurations remember to install python-decouple
