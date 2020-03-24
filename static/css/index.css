@@ -32,3 +32,23 @@ body {margin:0;}
     padding: 16px;
     margin-top: 30px;
   }
+
+  .nei {
+      background-image: url("https://netstorage-tuko.akamaized.net/images/2d549eb30e8fbae7.jpg");
+      background-size: cover;
+      text-align: center;
+      padding: 50px;
+  }
+
+  .ne {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 80px;
+    color: aliceblue;
+    width: 70%;
+    margin-left: 170px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+  }
+
