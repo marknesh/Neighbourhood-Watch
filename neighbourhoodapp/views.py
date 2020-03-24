@@ -10,6 +10,17 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def home(request):
+    if request.user.is_authenticated:
+        return redirect(home)
+    else:
+        return  redirect('/accounts/login')
+
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -53,8 +64,6 @@ def activate(request, uidb64, token):
 
 
 
-def home(request):
-    return render(request,'home.html')
 
 
 

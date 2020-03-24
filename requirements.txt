@@ -1,6 +1,6 @@
 alembic==1.4.0
 aniso8601==8.0.0
-apturl==0.5.2
+
 asgiref==3.2.3
 asn1crypto==0.24.0
 astroid==2.3.3
@@ -25,6 +25,7 @@ django-bootstrap3==12.0.3
 django-bootstrap4==1.1.1
 django-extra-views==0.11.0
 django-haystack==2.8.1
+django-heroku==0.3.1
 django-oscar==2.0.4
 django-phonenumber-field==2.0.1
 django-regex==0.4.1
