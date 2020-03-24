@@ -16,8 +16,17 @@
 <div class="navbar">
     <a class="navbar-brand" href="{% url 'index' %}">Neighbourhood Watch</a>
     <a href="#home">Home</a>
-    <a href="#news">News</a>
     <a href="#contact">Contact</a>
+    <div class="navbar-right">
+        {% if user.is_authenticated %}
+        <a class="navbar-brand" href=""> Profile </a>
+        <a class="navbar-brand" href=""> Log Out </a>
+        
+        {% else %}
+       <a class="navbar-brand" href=""> Log In </a>
+       <a class="navbar-brand" href=""> Register </a>
+       {% endif %}
+       </div>
   </div>
 </body>
 </html>
