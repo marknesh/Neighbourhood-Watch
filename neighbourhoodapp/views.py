@@ -16,7 +16,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     if request.user.is_authenticated:
-        return redirect(home)
+        return render(request,'home.html')
     else:
         return  redirect('/accounts/login')
 
@@ -41,7 +41,7 @@ def signup(request):
                         mail_subject, message, to=[to_email]
             )
             email.send()
-            return HttpResponse('Please confirm your email address to complete the registration')
+            return render(request,'confirm.html')
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
@@ -58,7 +58,7 @@ def activate(request, uidb64, token):
         user.save()
         login(request, user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        return render(request,'confirmed.html')
     else:
         return HttpResponse('Activation link is invalid!')
 
