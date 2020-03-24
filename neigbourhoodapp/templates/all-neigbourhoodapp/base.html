@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>N-Watch - {{title}}</title>
+  {% else %}
+    <title> N-Watch </title>
+  {% endif %}
+
+</head>
+<body>
+    {% block content %}  {%endblock%}
+</body>
+</html>
