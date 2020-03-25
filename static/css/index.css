@@ -1,0 +1,54 @@
+h1
+{
+  color: green;
+}
+
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+    padding: 16px;
+    margin-top: 30px;
+  }
+
+  .nei {
+      background-image: url("https://netstorage-tuko.akamaized.net/images/2d549eb30e8fbae7.jpg");
+      background-size: cover;
+      text-align: center;
+      padding: 50px;
+  }
+
+  .ne {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 80px;
+    color: aliceblue;
+    width: 70%;
+    margin-left: 170px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+  }
+

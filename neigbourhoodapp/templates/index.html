@@ -1,0 +1,23 @@
+{%extends 'all-neigbourhoodapp/base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% block content %}
+    {{block.super}}
+    <div class="main">
+        <div class="nei">
+         <div class="ne">
+           <h1> Neighbourhood Watch</h1>
+       </div>
+       </div>
+   </div>
+    {% endblock %}
+    
+</body>
+</html>
