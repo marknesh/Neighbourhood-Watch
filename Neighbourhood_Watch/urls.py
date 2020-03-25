@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+
     path('admin2/', admin.site.urls),
     path('',include('neighbourhoodapp.urls')),
     path('auth/', include('django_registration.backends.one_step.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('logout/',views.LogoutView.as_view())
+
 
 ]

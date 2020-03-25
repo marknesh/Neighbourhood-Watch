@@ -7,7 +7,7 @@ body {margin:0;}
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(1, 14, 80);
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,8 +24,8 @@ body {margin:0;}
 }
 
 .navbar a:hover {
-  background: #ddd;
-  color: black;
+  background: transparent;
+  color: greenyellow;
 }
 
 .main {
@@ -34,21 +34,63 @@ body {margin:0;}
   }
 
   .nei {
-      background-image: url("https://netstorage-tuko.akamaized.net/images/2d549eb30e8fbae7.jpg");
+      background-image: url("https://www.pngkey.com/png/full/892-8920090_neighbourhood-small-grants.png");
       background-size: cover;
       text-align: center;
-      padding: 50px;
+      padding: 2px;
   }
 
   .ne {
     text-align: center;
-    border: 1px solid #ccc;
-    padding: 80px;
+    padding: 60px;
     color: aliceblue;
     width: 70%;
     margin-left: 170px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 30px;
+    margin-bottom: 100px;
 
   }
 
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 30%;
+    margin: auto;
+  }
+
+  .panel-heading {
+    background-color: black;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(0, 18, 136);
+    color: rgb(0, 250, 29);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 400px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.footer {
+  padding-top: 40px;
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'rest_framework',
     'rest_framework.authtoken',
 
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'six',
     'neighbourhoodapp',
+
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
