@@ -24,8 +24,8 @@ body {margin:0;}
 }
 
 .navbar a:hover {
-  background: #ddd;
-  color: black;
+  background: transparent;
+  color: greenyellow;
 }
 
 .main {
@@ -34,21 +34,20 @@ body {margin:0;}
   }
 
   .nei {
-      background-image: url("https://netstorage-tuko.akamaized.net/images/2d549eb30e8fbae7.jpg");
+      background-image: url("https://www.pngkey.com/png/full/892-8920090_neighbourhood-small-grants.png");
       background-size: cover;
       text-align: center;
-      padding: 50px;
+      padding: 2px;
   }
 
   .ne {
     text-align: center;
-    border: 1px solid #ccc;
-    padding: 80px;
+    padding: 60px;
     color: aliceblue;
     width: 70%;
     margin-left: 170px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 30px;
+    margin-bottom: 100px;
 
   }
 
