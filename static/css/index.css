@@ -7,7 +7,7 @@ body {margin:0;}
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(1, 14, 80);
   position: fixed;
   top: 0;
   width: 100%;
@@ -51,3 +51,22 @@ body {margin:0;}
 
   }
 
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 30%;
+    margin: auto;
+  }
+
+  .panel-heading {
+    background-color: black;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(0, 18, 136);
+    color: rgb(0, 250, 29);
+}
