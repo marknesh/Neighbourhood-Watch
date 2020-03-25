@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
 
     'rest_framework',
     'rest_framework.authtoken',
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     'neighbourhoodapp',
 
 
+=======
+>>>>>>> f43f7746606b0f90794783a828411cdf49829290
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from . models import Profile
 
+
 from django.contrib.auth.decorators import login_required
 
 @login_required
