@@ -5,7 +5,6 @@ class Neighbourhood(models.Model):
     name = models.CharField(max_length =60)
     location = models.CharField(max_length =60)
     occupants = models.CharField(max_length =60)
-    # admin = models.ForeignKey(Admin)
     pub_date = models.DateTimeField(auto_now_add=True)
 
 
