@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.db import models
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
@@ -46,6 +46,3 @@ class Business(models.Model):
 
 
 # Create your models here.
-=======
-
->>>>>>> f43f7746606b0f90794783a828411cdf49829290

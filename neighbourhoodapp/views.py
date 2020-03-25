@@ -18,9 +18,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def home(request):
     if request.user.is_authenticated:
-        return render(request,'home.html')
+        return render(request,'index.html')
     else:
-        return  redirect('/accounts/login')
+        return  redirect('/auth/login')
 
 
 def signup(request):

@@ -20,11 +20,11 @@
     <div class="navbar-right">
         {% if user.is_authenticated %}
         <a class="navbar-brand" href=""> Profile </a>
-        <a class="navbar-brand" href=""> Log Out </a>
+        <a class="navbar-brand" href="/logout"> Log Out </a>
         
         {% else %}
-       <a class="navbar-brand" href=""> Log In </a>
-       <a class="navbar-brand" href=""> Register </a>
+       <a class="navbar-brand" href="/auth/login"> Log In </a>
+       <a class="navbar-brand" href="/auth/register"> Register </a>
        {% endif %}
        </div>
   </div>
