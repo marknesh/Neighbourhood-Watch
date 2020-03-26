@@ -41,10 +41,11 @@ INSTALLED_APPS = [
 
     'cloudinary',
     'tinymce',
+
     'bootstrap4',
     'six',
     'neighbourhoodapp',
-'bootstrap3',
+    'bootstrap3',
 
 
     'django.contrib.admin',
