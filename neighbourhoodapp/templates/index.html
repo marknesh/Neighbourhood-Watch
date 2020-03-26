@@ -36,77 +36,25 @@
 
 
 
+        <div class="card-columns">
+   {% for nei in nei %}
 
 
-    <div class="card-group" >
-<div class="card ">
+
+<div class="card  ">
   <div class="card-body">
-    <h5 class="card-title">Nairobi</h5>
-    <h6 class="card-subtitle mb-2 text-muted">langata</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-  <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
-
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Nairobi</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Muthaiga</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-       <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Nairobi</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Embakasi</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-  <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
-  </div>
-</div>
-
-
-
-
-
-           <div class="card-group">
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Kiambu</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Runda</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-    <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
-  </div>
-</div>
-
-
-
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Kasarani</h5>
-    <h6 class="card-subtitle mb-2 text-muted">mwiki</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-  <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Mombasa</h5>
+    <h5 class="card-title">  {{nei.location}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Nyali</h6>
     <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-  <a href="#!" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
+  <a href="/updates/{{nei.id}}" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
   </div>
 </div>
+                  {% endfor %}
 
-           </div>
-    </div>
+        </div>
+
+
+
 
 
 

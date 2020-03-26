@@ -1,5 +1,5 @@
 
-
+{% include 'navbar2.html' %}
 {% block content %}
 
 {% load bootstrap4 %}
@@ -23,8 +23,9 @@
                 <h5 style="font-size:35px;">{{profile.username}}</h5>
 
 
-                             <p>{{profile.bio}}</p>
-
+                                      {% autoescape on %}
+  <p>{{profile.bio|  safe}}</p>
+    {% endautoescape %}
             {% endif %}
                 {% if profile.user == current_user%}
                 <a href="{% url 'update_profile'%}"><button class="btn btn-primary">Edit Profile</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

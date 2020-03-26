@@ -10,15 +10,22 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from . models import Profile
+from . models import Profile,Post,Neighbourhood
+from .forms import postForm,neighbourhoodform
 
 
 from django.contrib.auth.decorators import login_required
 
 @login_required
+def posted(request):
+    nei=Neighbourhood.allimages()
+    return  render(request,'index.html',{"nei":nei})
+
+@login_required
 def home(request):
     if request.user.is_authenticated:
-        return render(request,'index.html')
+        nei = Neighbourhood.allimages()
+        return render(request,'index.html',{"nei":nei})
     else:
         return  redirect('/auth/login')
 
@@ -79,7 +86,7 @@ def updatemyprofile(request):
                 myprofile.bio = form.cleaned_data['bio']
                 myprofile.username = form.cleaned_data['username']
                 myprofile.save_profile()
-                return redirect("/profile/")
+                return redirect(home)
         else:
             form = ProfileUpdateForm()
     except:
@@ -89,6 +96,7 @@ def updatemyprofile(request):
             if form.is_valid():
                 createprofile= Profile(profile_photo= form.cleaned_data['profile_photo'],bio = form.cleaned_data['bio'],username = form.cleaned_data['username'],user = current_user)
                 createprofile.save_profile()
+                return redirect(home)
 
 
 
@@ -103,6 +111,29 @@ def updatemyprofile(request):
 
 
 @login_required
+def comment(request, image_id):
+    comments = Post.objects.filter(neighbourhood=image_id)
+    current_image = Neighbourhood.objects.get(id=image_id)
+
+
+    if request.method == 'POST':
+
+        form = postForm(request.POST)
+
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.neighbourhood = current_image
+
+
+            current_image.save_image()
+            comment.save()
+            return redirect(home)
+    else:
+        form = postForm()
+    return render(request, 'posted.html', {"form": form, "comments": comments})
+
+@login_required
 def myprofile(request):
     current_user = request.user
     try:
@@ -112,6 +143,26 @@ def myprofile(request):
         profile = Profile.objects.filter(user_id=current_user)
 
     return render(request, 'profile.html',{"profile": profile, "current_user": current_user})
+
+@login_required
+def neighbourhhod(request):
+
+    if request.method == 'POST':
+        form=neighbourhoodform(request.POST , request.FILES)
+        if form.is_valid():
+            createprofile = Neighbourhood(name=form.cleaned_data['name'], location=form.cleaned_data['location'],occupants=form.cleaned_data['occupants'],)
+            createprofile.save_image()
+        return redirect(home)
+    else:
+        form=neighbourhoodform()
+    return  render(request,'createneighbourhood.html',{"form":form})
+
+@login_required
+def updates(request, image_id):
+    updates = Post.objects.filter(neighbourhood=image_id)
+    hood = Neighbourhood.objects.get(id=image_id)
+    return  render(request,'updates.html',{'updates':updates,'hood':hood})
+
 
 
 
