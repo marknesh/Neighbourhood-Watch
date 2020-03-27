@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 from django.db import models
 import datetime as dt
 
+
 class Neighbourhood(models.Model):
     name = models.CharField(max_length =60)
     location = models.CharField(max_length =60)
