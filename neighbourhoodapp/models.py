@@ -49,9 +49,13 @@ class Profile(models.Model):
 
 
 class Post(models.Model):
-
+    image = CloudinaryField('image',null=True)
     updates=models.CharField(max_length=300)
     neighbourhood=models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,null=True)
+    user= models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.updates
 
     def save_comment(self):
         '''

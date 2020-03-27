@@ -29,7 +29,7 @@ class ProfileUpdateForm(forms.ModelForm):
 class postForm(forms.ModelForm):
     class Meta:
         model=Post
-        fields=('updates',)
+        fields=('updates','image',)
 
 
 class neighbourhoodform(forms.ModelForm):

@@ -1,10 +1,13 @@
-{% load bootstrap4 %}
+{%extends "registration/base.html"%}
+
 {% block content %}
+{{block.super}}
+{% load bootstrap4 %}
 {% load static %}
 {% block styles %}
 {% bootstrap_css %}
 
-  <link rel="stylesheet" href="{% static 'css/posted.css' %}">
+  <link rel="stylesheet" href="{% static '' %}">
 
 {% endblock %}
 <body>

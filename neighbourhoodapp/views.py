@@ -114,15 +114,17 @@ def updatemyprofile(request):
 def comment(request, image_id):
     comments = Post.objects.filter(neighbourhood=image_id)
     current_image = Neighbourhood.objects.get(id=image_id)
+    current_user = request.user
 
 
     if request.method == 'POST':
 
-        form = postForm(request.POST)
+        form = postForm(request.POST,request.FILES)
 
 
         if form.is_valid():
             comment = form.save(commit=False)
+            comment.user=current_user
             comment.neighbourhood = current_image
 
 

@@ -6,24 +6,38 @@
 
 
 {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
-
+<div class="container">
 <a href="{% url 'comment' hood.id %}"><button>Write an update</button></a>
 <br>
 <h1>Updates</h1>
 <div class="row">
+    {% if updates %}
    {% for update in updates%}
-        {{update.updates}} {% endfor %}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" >
+        <div style="text-align:center"> {{update.updates}} <br>   by {{update.user}}</div>
 
+
+        <img src="{{update.image.url}}" class="image">
+
+        {% endfor %}
+        {% else %}
+
+        No Updates
+
+        {% endif %}
+
+
+    </div>
 
 </div>
-
-
-
+</div>
 
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %} {% endblock %}
 
 {% endblock %}
+
 

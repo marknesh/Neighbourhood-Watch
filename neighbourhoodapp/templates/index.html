@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
     {% endblock %}
 
-
+<div class="container-fluid">
   <img class="my-class" src="https://res.cloudinary.com/dfjpf16e3/image/upload/v1585306771/nll9ruwyvhniu1ooxuyb.jpg" height="auto" width="100%">
 
     <div style="background-color:rgb(255, 255, 255)">
@@ -43,8 +43,8 @@
 
 <div class="card  ">
   <div class="card-body">
-    <h5 class="card-title">  {{nei.location}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Nyali</h6>
+    <h5 class="card-title">  {{nei.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{nei.location}}</h6>
     <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
   <a href="/updates/{{nei.id}}" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
   </div>
@@ -60,7 +60,7 @@
 
 
 
-
+</div>
 
 
 {% endblock %}

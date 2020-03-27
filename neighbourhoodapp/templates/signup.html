@@ -1,4 +1,20 @@
+
+{%extends "registration/base.html"%}
+
 {% block content %}
+{{block.super}}
+{% load bootstrap4 %}
+
+
+
+    {% load static %}
+
+   {% block styles %}
+    {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    {% endblock %}
+
+<div style="text-align:center">
   <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
@@ -16,4 +32,5 @@
       {% endfor %}
     <button type="submit">Sign up</button>
   </form>
+</div>
 {% endblock %}
