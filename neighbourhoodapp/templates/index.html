@@ -43,9 +43,11 @@
 
 <div class="card  ">
   <div class="card-body">
-    <h5 class="card-title">  {{nei.name}}</h5>
+    <h4 class="card-title">  {{nei.name}}</h4>
     <h6 class="card-subtitle mb-2 text-muted">{{nei.location}}</h6>
-    <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+            <h5 class="badge badge-warning">{{nei.occupants}} Occupants</h5>
+    <p class="card-text">Welcome to this neighbourhood</p>
+
   <a href="/updates/{{nei.id}}" class="card-link"><button class="btn btn-success">Join the neighbourhood</button></a>
   </div>
 </div>
