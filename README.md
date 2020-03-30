@@ -1,6 +1,7 @@
 ## Application name
 Neighbourhood-Watch
 
+[![codebeat badge](https://codebeat.co/badges/4275b44b-a533-45e5-95a3-7a64d03a0ef6)](https://codebeat.co/projects/github-com-marknesh-awards-website-master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
