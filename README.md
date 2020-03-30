@@ -7,7 +7,7 @@ Neighbourhood-Watch
 
 
 ## Description
-This application allows people in different neighbourhoods to connect with each other and post updates on different things happening in a particular neighbourhood.
+This application allows people in a particular neighbourhood to connect with each other and post updates on different things happening in a particular neighbourhood.
 The users are also able to see different businesses happening in a particular neighbourhood.
 
 
