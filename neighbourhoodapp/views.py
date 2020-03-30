@@ -10,8 +10,8 @@ from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from . models import Profile,Post,Neighbourhood
-from .forms import postForm,neighbourhoodform
+from . models import Profile,Post,Neighbourhood,Business
+from .forms import postForm,neighbourhoodform,businessform
 
 
 from django.contrib.auth.decorators import login_required
@@ -130,7 +130,7 @@ def comment(request, image_id):
 
             current_image.save_image()
             comment.save()
-            return redirect(home)
+            return redirect('updates',image_id)
     else:
         form = postForm()
     return render(request, 'posted.html', {"form": form, "comments": comments})
@@ -159,11 +159,51 @@ def neighbourhhod(request):
         form=neighbourhoodform()
     return  render(request,'createneighbourhood.html',{"form":form})
 
+
+
+def business(request, image_id):
+    business = Business.objects.filter(neighbourhood=image_id)
+    current_image = Neighbourhood.objects.get(id=image_id)
+    current_user = request.user
+    if request.method == 'POST':
+        form = businessform(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.neighbourhood = current_image
+
+            current_image.save_image()
+            comment.save_business()
+            return redirect(home)
+    else:
+        form = businessform()
+    return render(request, 'createbusiness.html', {"form": form,"business":business})
+
 @login_required
 def updates(request, image_id):
     updates = Post.objects.filter(neighbourhood=image_id)
+    business= Business.objects.filter(neighbourhood=image_id)
     hood = Neighbourhood.objects.get(id=image_id)
-    return  render(request,'updates.html',{'updates':updates,'hood':hood})
+    return  render(request,'updates.html',{'updates':updates,'hood':hood,"business":business})
+
+@login_required
+def get_business(request, image_id):
+
+    business= Business.objects.filter(neighbourhood=image_id)
+    return  render(request,'business.html',{"business":business})
+
+
+def search_business(request):
+
+    if 'name' in request.GET and request.GET["name"]:
+        search_term=request.GET.get("name")
+        searchednames=Business.findbusiness(search_term)
+        message=f"{search_term}"
+        return render(request,"search.html",{"message":message,"searched":searchednames})
+
+    else:
+        message="you haven't searched"
+    return render(request,"search.html",{"message":message})
 
 
 

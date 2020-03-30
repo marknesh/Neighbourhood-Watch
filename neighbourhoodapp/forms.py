@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.db import models
 
-from .models import Post,Neighbourhood,Profile
+from .models import Post,Neighbourhood,Profile,Business
 class SignupForm(UserCreationForm):
     email = forms.EmailField(max_length=200, help_text='Required')
     first_name = forms.CharField(max_length=200, help_text='Required')
@@ -36,3 +36,9 @@ class neighbourhoodform(forms.ModelForm):
     class Meta:
         model=Neighbourhood
         fields=('name','location','occupants')
+
+
+class businessform(forms.ModelForm):
+    class Meta:
+        model=Business
+        fields=('name','email',)

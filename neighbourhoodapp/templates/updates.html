@@ -8,14 +8,29 @@
 {% block styles %} {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
-<div class="container">
-<a href="{% url 'comment' hood.id %}"><button>Write an update</button></a>
+<div class="container-fluid">
+<a href="{% url 'comment' hood.id %}"><button class="btn btn-success">Post an update</button></a>
+
 <br>
-<h1>Updates</h1>
+
 <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-6" >
+            <h1>Businesses carried out:</h1>
+            {% if business %}
+       {% for business in business %}
+            <h3> {{business.name}}</h3>
+              <h6> {{business.email}}</h6>
+
+   {% endfor %}
+            {% else %}
+            <h2>No business carried out here</h2>
+            {% endif %}
+        </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-6" >
+   <h1>Updates</h1>
     {% if updates %}
    {% for update in updates%}
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" >
+
         <div style="text-align:center"> {{update.updates}} <br>   by {{update.user}}</div>
 
 
@@ -24,7 +39,8 @@
         {% endfor %}
         {% else %}
 
-        No Updates
+
+        <h2>No Updates</h2>
 
         {% endif %}
 

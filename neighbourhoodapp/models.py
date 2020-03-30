@@ -77,7 +77,18 @@ class Business(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,)
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE,)
 
+    def __str__(self):
+        return self.name
 
+    def save_business(self):
+        self.save()
+
+
+    @classmethod
+
+    def findbusiness(cls,name):
+        foundbusiness=cls.objects.filter(name__icontains=name).all()
+        return foundbusiness
 
 
 # Create your models here.

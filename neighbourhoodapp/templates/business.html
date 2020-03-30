@@ -1,0 +1,21 @@
+{% include 'navbar2.html' %}
+{% block content %}
+
+
+
+{% load bootstrap4 %} {% load static %}
+
+
+{% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+   {% for business in business %}
+      {{business.name}}
+   {% endfor %}
+   {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %} {% endblock %}
+
+{% endblock %}
+
+

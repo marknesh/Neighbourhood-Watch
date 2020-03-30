@@ -20,6 +20,9 @@ re_path(r'^api-token-auth/', obtain_auth_token),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     re_path(r'^update/(\d+)', views.comment, name='comment'),
     re_path(r'^updates/(\d+)', views.updates, name='updates'),
+    re_path(r'^business/(\d+)', views.business, name='updatesds'),
+    re_path(r'^g/(\d+)', views.get_business, name='updatesds'),
+    path('search/', views.search_business, name='search_results'),
 
 ]
 
