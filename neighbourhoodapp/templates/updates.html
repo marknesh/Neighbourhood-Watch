@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 <div class="container-fluid">
-<a href="{% url 'comment' hood.id %}"><button class="btn btn-success">Post an update</button></a>
+<a href="{% url 'comment' hood.id %}"><button class="btn btn-success" style="float:right">Post an update</button></a>
 
 <br>
 
@@ -27,7 +27,7 @@
             {% endif %}
         </div>
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-6" >
-   <h1>Updates</h1>
+   <h1 > Updates</h1>
     {% if updates %}
    {% for update in updates%}
 
