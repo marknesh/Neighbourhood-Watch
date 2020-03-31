@@ -3,7 +3,8 @@ Neighbourhood-Watch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
+## DB Design
+![](neighbourhoodapp/static/images/dbdesign.png)
 
 
 ## Description
