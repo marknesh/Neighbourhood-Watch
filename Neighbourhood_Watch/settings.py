@@ -139,7 +139,7 @@ cloudinary.config(
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'markmunene.nesh@gmail.com'
-EMAIL_HOST_PASSWORD ='lmjbkjvfiqccamrr'
+EMAIL_HOST_PASSWORD ='dvkjkgftlwifrswd'
 EMAIL_PORT = 587
 
 
